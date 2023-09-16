@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Loan Details</title>
+</head>
+<body>
+    <h1>Your Loan Details</h1>
+    <p>Customer: {{ customer.user.username }}</p>
+    
+    <h2>Loans</h2>
+    <ul>
+        {% for loan in loans %}
+        <li>
+            Loan Amount: {{ loan.total_loan }}
+            Payable Amount: {{ loan.payable_loan }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Transactions</h2>
+    <ul>
+        {% for transaction in transactions %}
+        <li>
+            Transaction ID: {{ transaction.transaction }}
+            Payment Amount: {{ transaction.payment }}
+            Payment Date: {{ transaction.payment_date }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
